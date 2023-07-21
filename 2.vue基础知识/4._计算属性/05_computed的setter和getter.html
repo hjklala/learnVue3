@@ -14,7 +14,7 @@
     <button @click="changeFullName">改正fullName</button>
     <h2>{{fullName}}</h2>
   </template>
-
+    
     <script src="../../../../../js/vue3.js"></script>
   <script>
     const App = {
@@ -46,6 +46,7 @@
         }
       },
       methods: {
+        //当fullName改变时就会触发 computed里面的setter方法
         changeFullName() {
           this.fullName = "Coder Why";
         }
