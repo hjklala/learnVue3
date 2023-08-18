@@ -1,6 +1,8 @@
 const path = require('path');
 const {CleanWebpackPlugin}=require("clean-webpack-plugin")
 const HtmlWebpackPlugin=require("html-webpack-plugin")
+// const {DefinPlusgin} =require("webpack")
+// const CopyWebpackPlugin =require("copy-webpack-plugin")
 
 //webpack配置文件
 module.exports = {
@@ -75,6 +77,27 @@ module.exports = {
       // template:'模板所在位置'  按照你所提供的模板生成index.html
       //修改生成出来的index.html的title
       title:"哈哈哈哈哈"
-    })
+    }),
+    //webpack自带插件 可定义一些打包时的变量
+    // new DefinPlugin({
+    //   BASE_URL:''
+    // })
+
+    //webpack打包时拷贝文件到打包位置（静态资源等）
+    // new CopyWebpackPlugin({
+    //   patterns:[
+    //     {
+    //       from:'需要拷贝的文件地址',
+    //       to:'到哪里 到打包文件最外层时可以忽略',
+    //       
+    //       配置忽略文件  
+    //       globalOptions:{
+    //         ignore:[
+    //           "**/文件名"
+    //         ]
+    //       }
+    //     }
+    //   ]
+    // })
   ]
 }
