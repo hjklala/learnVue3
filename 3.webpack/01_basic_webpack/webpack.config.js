@@ -3,6 +3,8 @@ const {CleanWebpackPlugin}=require("clean-webpack-plugin")
 const HtmlWebpackPlugin=require("html-webpack-plugin")
 // const {DefinPlusgin} =require("webpack")
 // const CopyWebpackPlugin =require("copy-webpack-plugin")
+const {VueLoaderPlugin}=require('vue-loader/dist/index')
+
 
 //webpack配置文件
 module.exports = {
@@ -65,7 +67,13 @@ module.exports = {
             maxSize:50*1024
           }
         }
-      },     
+      },
+      
+      //.vue文件的编译loader @vue/compiler-sfc
+      {
+        test:/\.vue$/,
+        loader:"vue-loader"
+      }
     ]
   },
   //插件的注册
@@ -75,9 +83,12 @@ module.exports = {
     //index.html打包插件(可以自动生成)
     new HtmlWebpackPlugin({
       // template:'模板所在位置'  按照你所提供的模板生成index.html
+      template:'./public/index.html',
       //修改生成出来的index.html的title
       title:"哈哈哈哈哈"
     }),
+
+    
     //webpack自带插件 可定义一些打包时的变量
     // new DefinPlugin({
     //   BASE_URL:''
@@ -99,5 +110,9 @@ module.exports = {
     //     }
     //   ]
     // })
+
+
+    //.vue文件解析插件 
+    new VueLoaderPlugin()
   ]
 }
