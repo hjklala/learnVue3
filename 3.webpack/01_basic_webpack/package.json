@@ -4,7 +4,8 @@
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "serve": "webpack serve"
   },
   "author": "",
   "license": "ISC",
@@ -16,7 +17,9 @@
     "postcss-preset-env": "^9.1.1",
     "style-loader": "^3.3.3",
     "vue-loader": "^17.2.2",
-    "webpack-cli": "^5.1.4"
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
   },
   "dependencies": {
     "@vue/compiler-sfc": "^3.3.4",
