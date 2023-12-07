@@ -30,10 +30,20 @@ module.exports = {
       return assetFilename.endsWith('.css') || assetFilename.endsWith('.js')
     }
   },
+  //配置模块该如何被解析
+  resolve:{
+    //解析到是文件时自动添加扩展名
+    extensions:[".js",".mjs",".json",".vue",".ts"],
+
+    //别名
+    alias:{
+      '@': path.resolve(__dirname, './src'),
+    }
+  },
   devServer:{
     //如果一个资源没有从webpack打包的文件中得到支持，则会从contentBase中的地址获得支持（主要是一些不被打包的静态资源）
     //在开发阶段，在使用devServer时没有copy-webpack来进行静态资源的复制，有可能会找不到，在这时候使用contentBase
-    contentBase:"./public",
+    static: path.join(__dirname, 'public'),
 
     //模块热更新，无需刷新页面，只变换改变模块，可保留某些状态
     hot:true,
