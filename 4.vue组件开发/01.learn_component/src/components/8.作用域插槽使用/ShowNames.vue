@@ -5,7 +5,7 @@
 
       <slot name="why"></slot>
     </template>
-  </div>
+  </div>  
 </template>
 
 <script>
